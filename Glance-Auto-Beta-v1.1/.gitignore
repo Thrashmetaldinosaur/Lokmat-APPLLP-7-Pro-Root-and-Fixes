@@ -1,0 +1,18 @@
+# Build output and personal settings
+.gradle/
+app/build/
+build/
+local.properties
+.idea/
+*.iml
+*.jks
+*.keystore
+*.apk
+*.zip
+# Never commit private device logs or diagnostics
+*RESULTS*/
+*EVENTS*.txt
+*SESSION*.txt
+*BATTERY*.txt
+*POWER*.txt
+*logcat*.txt
