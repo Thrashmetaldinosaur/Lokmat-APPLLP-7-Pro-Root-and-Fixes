@@ -250,3 +250,7 @@ See **[APPLLP 7 Pro project tracker](PROJECT-TRACKER.md)** for verified fixes, o
 ## Verified display fix: Square Scale (17 November 2026)
 
 [**Square Scale**](Square-Scale/README.md) is a Vector module (System Framework scope) that makes the built in square app mode bigger. The menu's square preset writes a fixed 0.72 scale to `watch_small_screen_scale_h/_v`; the module rewrites that value to 0.85 as it is saved (adjustable with `persist.sys.square_scale`, 0.5 to 1.0). This fixes unresizeable, portrait locked apps such as Unity games that ignore `wm size`. User confirmed working after a reboot.
+
+## Verified fix: Glance Auto Beta v1.1 (17 November 2026)
+
+[**Glance Auto Beta v1.1 — source, build instructions and recovery**](Glance-Auto-Beta-v1.1/README.md) is a rooted Android 15 app for the APPLLP 7 Pro that displays a large glance clock on verified wrist-raise wakes, dismisses to the underlying app on tap, sleeps after 8.5 seconds without a tap, and automatically rearms. Power-button wakes bypass the clock. Optional boot startup was **user-confirmed after one initial power-button screen-off**; subsequent wrist-wake cycles kept working. The code does not replace Magisk, the separate original Stage 1 beta, or the existing cooldown module. Other firmware builds and long-term battery impact have not been established. The [GitHub Actions build workflow](.github/workflows/build-glance-auto.yml) can produce a debug APK; signing keys differ between builds, so do not assume that APK can upgrade an existing locally signed installation.
