@@ -1,22 +1,22 @@
 # APPLLP 7 Pro — fixes and development tracker
 
-**Updated 15 November 2026.** Reference device: `WP_C30_VP69_OLED`, Android 15, build `LOKMAT_APPLLP_7_PRO_C30_EN_V1.0_20260921`, Magisk 31.1, unlocked slot A. **Status labels distinguish user-confirmed results from tests and unverified proposals.**
+**Updated 18 November 2026 (navigation and titles).** Reference device: `WP_C30_VP69_OLED`, Android 15, build `LOKMAT_APPLLP_7_PRO_C30_EN_V1.0_20260921`, Magisk 31.1, unlocked slot A. **Status labels distinguish user-confirmed results from tests and unverified proposals.**
 
 ## Verified / keep working
 
 | Feature | Result and caveat |
 | --- | --- |
-| All Apps Fix (v1.7) | **Verified cumulative module, 14 Nov 2026:** removes clock/date; retains 10-icon 5 × 2 pages, four favorites, and custom ordering; corrects early regular-app indexing and skips the blank wraparound page. Vector logs: `-1 → 9` / `10 → 0`, 97 app entries. **v1.7 replaces v1.6 inside one module**, not a separate add-on. [Canonical All Apps Fix](All-Apps-Fix/README.md) |
+| 10-icon app drawer without the oversized clock (v1.7) | **Verified cumulative module, 14 Nov 2026:** removes clock/date; retains 10-icon 5 × 2 pages, four favorites, and custom ordering; corrects early regular-app indexing and skips the blank wraparound page. Vector logs: `-1 → 9` / `10 → 0`, 97 app entries. **v1.7 replaces v1.6 inside one module**, not a separate add-on. [Canonical All Apps Fix](App-Drawer-10-Icons-No-Clock/README.md) |
 | Root and recovery | Magisk 31.1 installed and verified. Stock backup retained. See [root README](README.md) |
-| Persistent Light Doze | Light ON, Deep OFF after full restart; see [module](Light-Doze-Magisk-v1/README.md). Battery improvement not quantified |
-| Fitness debloat | Seven OEM packages disabled reversibly; see [guide](Fitness-Debloat/README.md) |
-| YouTube + ReVanced fullscreen | **ReVanced built-in portrait fullscreen setting discovered and verified sufficient by user (13 Nov)**; separate Magisk v6.2 service **disabled by user as redundant**. v6.2 had previously worked at native 182 DPI; 154 DPI override was incompatible with its startup guard. [Historical v6.2 guide](YouTube-ReVanced-Auto-Fullscreen-v6.2/README.md). Do not automatically re-enable it or Vector YouTube hooks |
+| Light Doze without Deep Doze | Light ON, Deep OFF after full restart; see [module](Enable-Light-Doze-Mode/README.md). Battery improvement not quantified |
+| Disable preinstalled fitness and health apps | Seven OEM packages disabled reversibly; see [guide](Disable-Stock-Fitness-Apps/README.md) |
+| Earlier YouTube/ReVanced fullscreen workaround (disabled) | **ReVanced built-in portrait fullscreen setting discovered and verified sufficient by user (13 Nov)**; separate Magisk v6.2 service **disabled by user as redundant**. v6.2 had previously worked at native 182 DPI; 154 DPI override was incompatible with its startup guard. [Historical v6.2 guide](Auto-Fullscreen-YouTube-v6.2/README.md). Do not automatically re-enable it or Vector YouTube hooks |
 | Round/watch display | Physical/logical baseline 466×466, 182 native DPI. Global square-first experiment was removed |
 | Right-swipe panel | OEM launcher setting changed from fitness to App Menu |
 | App grid | `settings get system app_list_style` = **5**, Phone-style paged grid, preferred |
 | Custom app sorting | 94 entries reordered, original database backup preserved; SQLite integrity and order verified after restart |
-| Pure Face watch face | User installed `DigitalPureBlack` and changed the active face. [Installation and archive note](Pure-Face/README.md) |
-| Native Fahrenheit + watchface v2 | **User-confirmed working 14 Nov 2026:** native `step_user_metric=0` enables Fahrenheit throughout OEM weather; a launcher-scoped Vector hook supplies converted temperature to watch faces in memory. Successful reboot and hook-log verification. Future weather refresh and OTA compatibility not yet proven. [Verified v2 source and guide](Watchface-Fahrenheit-v2/README.md). Old `wxf.sh` was a historical workaround, not the new fix |
+| Pure Face watch face | User installed `DigitalPureBlack` and changed the active face. [Installation and archive note](Minimal-Black-Watch-Face/README.md) |
+| Native Fahrenheit + watchface v2 | **User-confirmed working 14 Nov 2026:** native `step_user_metric=0` enables Fahrenheit throughout OEM weather; a launcher-scoped Vector hook supplies converted temperature to watch faces in memory. Successful reboot and hook-log verification. Future weather refresh and OTA compatibility not yet proven. [Verified v2 source and guide](Fahrenheit-on-Weather-and-Watchfaces/README.md). Old `wxf.sh` was a historical workaround, not the new fix |
 
 ## Notification vibration — user-reported working (14 November 2026)
 
@@ -93,6 +93,6 @@
 
 ## Verified Glance Auto Beta v1.1 — 17 November 2026
 
-- **User-confirmed working after reboot:** `com.appllp7.glanceauto` v1.1, with opt-in REBOOT START, continuously rearming glance clock, wrist-gesture wake, tap dismissal, 8.5-second no-tap sleep, and power-button bypass. The tester reports **one initial power-button close after reboot**, then continuous operation. [Source and installation guide](Glance-Auto-Beta-v1.1/README.md).
+- **User-confirmed working after reboot:** `com.appllp7.glanceauto` v1.1, with opt-in REBOOT START, continuously rearming glance clock, wrist-gesture wake, tap dismissal, 8.5-second no-tap sleep, and power-button bypass. The tester reports **one initial power-button close after reboot**, then continuous operation. [Source and installation guide](Wrist-Raise-Clock-Auto-v1.1/README.md).
 - **Preserved:** original separate Stage 1 (`com.appllp7.glancebeta`), Magisk authorization and wake cooldown. No OEM wrist-wake or screen-timeout modifications from the Glance app.
 - **Limitations:** battery impact over days, OTAs, and other watches untested. Do not replace the working signed APK without a recovery copy. Future work: optional hands-free first-arm on boot, only after preserving the current working behavior.

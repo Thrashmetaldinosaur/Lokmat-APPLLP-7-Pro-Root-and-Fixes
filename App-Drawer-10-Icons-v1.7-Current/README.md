@@ -1,6 +1,6 @@
-# Full First Page v1.7 — verified pagination correction
+# App drawer: 10 icons, favorites, and no blank swipe page — v1.7 (current)
 
-**Status:** User-reported working and verified in runtime hook logs, 14 November 2026. **This version is the current integrated [All Apps Fix](../All-Apps-Fix/README.md), not a separate add-on.** Builds on the [v1.6 clock-free 10-icon grid](../Full-First-Page-v1.6/README.md).
+**Status:** User-reported working and verified in runtime hook logs, 14 November 2026. **This version is the current integrated [All Apps Fix](../App-Drawer-10-Icons-No-Clock/README.md), not a separate add-on.** Builds on the [v1.6 clock-free 10-icon grid](../App-Drawer-10-Icons-v1.6-Previous/README.md).
 
 [Download sanitized v1.7 source archive](APPLLP7-Full-First-Page-v1.7-PUBLIC-SOURCE.zip) · SHA-256: `76467fb041e70540e54effa49caac51c61d30518ebaa50cd32f874f0dee38ada`
 

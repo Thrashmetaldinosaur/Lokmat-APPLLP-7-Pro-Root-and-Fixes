@@ -1,4 +1,4 @@
-# Square Scale
+# Make apps larger in the watch's square-screen mode
 
 Vector (LSPosed) module for the Lokmat APPLLP 7 Pro that makes the built in square app mode bigger.
 

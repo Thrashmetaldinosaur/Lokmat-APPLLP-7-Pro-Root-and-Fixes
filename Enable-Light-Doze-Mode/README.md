@@ -1,4 +1,4 @@
-# APPLLP 7 Pro — Persistent Light Doze (verified v1)
+# Enable Light Doze while keeping Deep Doze disabled
 
 **Verified:** 10 November 2026, LOKMAT APPLLP 7 Pro `WP_C30_VP69_OLED`, Android 15, Magisk 31.1, active slot `_a`. A full reboot followed by an independent ADB check confirmed **Light Doze enabled (1), Deep Doze disabled (0)** and the module boot log indicated successful execution. SMS and incoming calls worked in a prior Light Doze trial. WhatsApp push timing and actual battery savings were **not** quantified.
 

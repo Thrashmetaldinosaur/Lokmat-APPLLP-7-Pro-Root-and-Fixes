@@ -1,4 +1,4 @@
-# Glance Auto Beta v1.1 — LOKMAT APPLLP 7 Pro
+# Raise your wrist to see the clock automatically — v1.1
 
 **Status: User-confirmed working** on a rooted LOKMAT APPLLP 7 Pro running Android 15 (`WP_C30_VP69_OLED`, firmware `LOKMAT_APPLLP_7_PRO_C30_EN_V1.0_20260921`) with Magisk 31.1. This source is a standalone Android app, **not a Magisk module** and not a firmware image.
 

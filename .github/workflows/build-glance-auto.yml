@@ -2,7 +2,7 @@ name: Build Glance Auto Beta APK
 on:
   push:
     paths:
-      - 'Glance-Auto-Beta-v1.1/**'
+      - 'Wrist-Raise-Clock-Auto-v1.1/**'
       - '.github/workflows/build-glance-auto.yml'
   workflow_dispatch:
 jobs:
@@ -23,12 +23,12 @@ jobs:
         with:
           gradle-version: '8.9'
       - name: Run Java regression suite
-        run: bash Glance-Auto-Beta-v1.1/qa/run-stress.sh
+        run: bash Wrist-Raise-Clock-Auto-v1.1/qa/run-stress.sh
       - name: Build debug APK
         run: gradle --no-daemon -p Glance-Auto-Beta-v1.1 :app:assembleDebug
       - name: Upload installable APK
         uses: actions/upload-artifact@v4
         with:
           name: APPLLP7-Glance-Auto-Beta-v1.1-debug-APK
-          path: Glance-Auto-Beta-v1.1/app/build/outputs/apk/debug/app-debug.apk
+          path: Wrist-Raise-Clock-Auto-v1.1/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error

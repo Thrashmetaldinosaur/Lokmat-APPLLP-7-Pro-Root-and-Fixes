@@ -1,4 +1,6 @@
-# APPLLP 7 Pro — Automatic YouTube + ReVanced fullscreen (v6.2)
+# Automatically expand YouTube videos to fullscreen — v6.2 (older option)
+
+> **Previously working, currently disabled by the tester.** YouTube ReVanced's own fullscreen option later made this background Magisk service unnecessary for that use case. This is an optional historical approach, not a recommendation to re-enable it.
 
 **Tested:** 11–12 November 2026 on LOKMAT APPLLP 7 Pro `WP_C30_VP69_OLED`, Android 15, 466×466 logical/physical default, 182 DPI, Magisk 31.1, active slot A.
 
@@ -55,7 +57,7 @@ The script must not be used on other displays or different Android watch models 
 
 Only module source and release artifacts should be public. **Do not publish results ZIPs** containing user-specific media sessions, screenshots, account metadata, ADB identifiers, recovery dumps, or firmware partitions.
 
-Related: [APPLLP 7 Pro root guide](../README.md) · [Light Doze v1](../Light-Doze-Magisk-v1/README.md).
+Related: [APPLLP 7 Pro root guide](../README.md) · [Light Doze v1](../Enable-Light-Doze-Mode/README.md).
 
 ## Status change — 13 November 2026
 

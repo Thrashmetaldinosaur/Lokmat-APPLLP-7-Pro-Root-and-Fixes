@@ -1,4 +1,6 @@
-# Pure Face for APPLLP 7 Pro — `DigitalPureBlack`
+# Minimal black digital watch face — installation guide (assets not included)
+
+**Installation instructions only:** the original third-party watch-face image assets are not redistributed in this repository.
 
 **Status: installed and active, confirmed by the watch owner on 13 November 2026.**
 

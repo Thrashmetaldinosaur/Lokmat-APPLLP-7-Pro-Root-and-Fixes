@@ -1,4 +1,4 @@
-# APPLLP 7 Pro — reversible OEM fitness debloat (verified)
+# Disable seven preinstalled fitness and health apps (reversible)
 
 **Tested:** 10 November 2026 on `WP_C30_VP69_OLED` running Android 15, firmware `LOKMAT_APPLLP_7_PRO_C30_EN_V1.0_20260921`. This is a record of **seven Android user-0 package disables**, not APK deletion or a Magisk module.
 

@@ -1,4 +1,33 @@
-# LOKMAT APPLLP 7 Pro — Android 15 Magisk root (verified)
+# LOKMAT APPLLP 7 Pro — Root guide and practical fixes
+
+## Find a fix
+
+**Pick what you want the watch to do.** These are separate fixes; you do not need to install everything. Read each guide's model requirements and rollback instructions first.
+
+| What you want to change | Guide / download | Status |
+| --- | --- | --- |
+| **Raise your wrist to see a large clock**; tap to dismiss; automatically rearm, optionally after reboot | [Automatic wrist-raise clock v1.1](Wrist-Raise-Clock-Auto-v1.1/README.md) | Working after reboot (one initial power-button screen-off required); rooted Android app |
+| **Show 10 app icons per page, remove the giant clock/date, and retain four favorites** | [App drawer: 10 icons, no clock (current v1.7)](App-Drawer-10-Icons-No-Clock/README.md) | Verified Vector module; current v1.7 [source and release notes](App-Drawer-10-Icons-v1.7-Current/README.md) |
+| **Make notification cards more compact** | [Smaller notification cards](Smaller-Notification-Cards/README.md) | v2 verified; denser v3 experimental |
+| **Make apps bigger in square-screen mode** on the round display | [Larger square-screen apps](Make-Square-Apps-Larger/README.md) | Verified Vector module |
+| **Show Fahrenheit in OEM weather and on watch faces** | [Fahrenheit weather + watch-face fix v2](Fahrenheit-on-Weather-and-Watchfaces/README.md) | Verified; uses the native units setting plus a Vector hook |
+| **Disable unwanted factory fitness/health apps** | [Disable seven stock fitness apps](Disable-Stock-Fitness-Apps/README.md) | Verified, reversible; removes fitness functions |
+| **Enable Light Doze but leave Deep Doze off** | [Light Doze mode](Enable-Light-Doze-Mode/README.md) | Verified after full reboot; battery savings not quantified |
+| **Install a minimal black digital watch face** | [Minimal black watch face guide](Minimal-Black-Watch-Face/README.md) | Installation confirmed; watch-face assets are **not** hosted here |
+
+### Older versions and alternative approaches
+
+| Older option | Why it is here |
+| --- | --- |
+| [10-icon app drawer v1.6](App-Drawer-10-Icons-v1.6-Previous/README.md) | Previous working version; superseded by v1.7. **Do not install as a second module.** |
+| [Previous Fahrenheit weather polling script](Old-Fahrenheit-Weather-Script/README.md) | Historical workaround with double-conversion risks; use the current Fahrenheit fix above instead |
+| [YouTube/ReVanced automatic fullscreen v6.2](Auto-Fullscreen-YouTube-v6.2/README.md) | Previously verified Magisk approach; later disabled as redundant when ReVanced's own fullscreen setting worked |
+
+**Root the exact supported firmware first if a fix requires Magisk.** The [tested root guide](#rooting-guide-for-the-tested-firmware) is below.
+
+---
+
+## Rooting guide for the tested firmware
 
 **Status:** Successfully rooted and booted on 9 November 2026 with Magisk **v31.1**. Root Checker confirmed working superuser access.
 
@@ -209,15 +238,15 @@ Related: [APPLLP 9 MAX root guide](https://github.com/Thrashmetaldinosaur/LOKMAT
 
 ## Verified follow-up: persistent Light Doze (10 November 2026)
 
-A reversible Magisk module for the rooted APPLLP 7 Pro is published in **[Light-Doze-Magisk-v1](Light-Doze-Magisk-v1/README.md)**, including the directly installable ZIP and its source scripts. On the tested Android 15/Slot A watch, the module successfully enabled **Light Doze ON / Deep Doze OFF** following a full reboot. A soft/framework-only reboot may reset the settings until the next full boot. The battery-life improvement has not yet been quantified.
+A reversible Magisk module for the rooted APPLLP 7 Pro is published in **[Light-Doze-Magisk-v1](Enable-Light-Doze-Mode/README.md)**, including the directly installable ZIP and its source scripts. On the tested Android 15/Slot A watch, the module successfully enabled **Light Doze ON / Deep Doze OFF** following a full reboot. A soft/framework-only reboot may reset the settings until the next full boot. The battery-life improvement has not yet been quantified.
 
 ## Verified follow-up: YouTube + ReVanced auto fullscreen (11–12 November 2026)
 
-See **[YouTube-ReVanced-Auto-Fullscreen-v6.2](YouTube-ReVanced-Auto-Fullscreen-v6.2/README.md)** for the working Magisk `service.sh` approach, device measurements, and recovery notes. Regular YouTube and `app.revanced.android.youtube` were both confirmed working after reboot. It temporarily changes the logical viewport **466×466 → 466×426** *after foreground playback begins*, then returns to 466×466 on Home. It does **not** patch YouTube's APK or require Vector hooks. A static `normal + notround` system configuration was tested and **rolled back** because it did not independently solve fullscreen.
+See **[YouTube-ReVanced-Auto-Fullscreen-v6.2](Auto-Fullscreen-YouTube-v6.2/README.md)** for the working Magisk `service.sh` approach, device measurements, and recovery notes. Regular YouTube and `app.revanced.android.youtube` were both confirmed working after reboot. It temporarily changes the logical viewport **466×466 → 466×426** *after foreground playback begins*, then returns to 466×466 on Home. It does **not** patch YouTube's APK or require Vector hooks. A static `normal + notround` system configuration was tested and **rolled back** because it did not independently solve fullscreen.
 
 ## Verified follow-up: reversible OEM fitness debloat (10 November 2026)
 
-See **[Fitness-Debloat](Fitness-Debloat/README.md)** for the seven OEM health/fitness packages disabled for Android user 0 on the tested watch and the commands to restore them. Battery savings have not yet been quantified. The launcher and core connectivity services were preserved.
+See **[Fitness-Debloat](Disable-Stock-Fitness-Apps/README.md)** for the seven OEM health/fitness packages disabled for Android user 0 on the tested watch and the commands to restore them. Battery savings have not yet been quantified. The launcher and core connectivity services were preserved.
 
 ## Off-state charging
 
@@ -232,9 +261,9 @@ On the tested device, an LSPosed interface/notification issue was resolved by sw
 
 See **[APPLLP 7 Pro project tracker](PROJECT-TRACKER.md)** for verified fixes, outstanding display/wake issues, and the requested Recents shortcut, longer lift-to-wake cooldown, aspect-ratio shortcut, and per-app aspect-ratio compatibility improvements.
 
-- [Pure Face / DigitalPureBlack watch face](Pure-Face/README.md) — installed and confirmed by the tester; installation helper included, user-supplied graphical assets not committed.
-- [Celsius-to-Fahrenheit display workaround](Weather-Temperature-Fahrenheit/README.md) — **user confirmed working after a full reboot (13 Nov 2026)**; repeated-conversion edge cases remain under review.
-- Compact notification layout — [Compact Notifications](Compact-Notifications/README.md) v2 is **visually and hook-log verified**; the denser v3 built and installed but still needs post-reboot confirmation.
+- [Pure Face / DigitalPureBlack watch face](Minimal-Black-Watch-Face/README.md) — installed and confirmed by the tester; installation helper included, user-supplied graphical assets not committed.
+- [Celsius-to-Fahrenheit display workaround](Old-Fahrenheit-Weather-Script/README.md) — **user confirmed working after a full reboot (13 Nov 2026)**; repeated-conversion edge cases remain under review.
+- Compact notification layout — [Compact Notifications](Smaller-Notification-Cards/README.md) v2 is **visually and hook-log verified**; the denser v3 built and installed but still needs post-reboot confirmation.
 - Unwanted persistent notifications — investigate selective removal without silencing essential indicators.
 - Full First Page v1 and v1.1 — clock/date removal and first-page expansion were both **unsuccessful on-device** despite successful APK installs; launcher remains unchanged. Investigate hook logs before retrying.
 
@@ -243,14 +272,14 @@ See **[APPLLP 7 Pro project tracker](PROJECT-TRACKER.md)** for verified fixes, o
 
 ## Verified launcher customization (14 November 2026)
 
-[**All Apps Fix (current v1.7)**](All-Apps-Fix/README.md) is one cumulative Vector module that removes the large clock/date from the OEM Style 5 app menu, keeps **10 regular icons per full page (5 × 2) and the four original bottom favorites**, preserves app sorting, and skips the unaddressable empty page at wraparound. User-confirmed on the APPLLP 7 Pro; logs verify both wrap directions. This is a separate launcher-scoped Vector module, not part of rooting. Don't install on other firmware builds without verification.
+[**All Apps Fix (current v1.7)**](App-Drawer-10-Icons-No-Clock/README.md) is one cumulative Vector module that removes the large clock/date from the OEM Style 5 app menu, keeps **10 regular icons per full page (5 × 2) and the four original bottom favorites**, preserves app sorting, and skips the unaddressable empty page at wraparound. User-confirmed on the APPLLP 7 Pro; logs verify both wrap directions. This is a separate launcher-scoped Vector module, not part of rooting. Don't install on other firmware builds without verification.
 
 **Notification status (14 November 2026):** Notification vibration was disabled in the native settings for this tested configuration; Compact Notifications v2 was subsequently verified. Selective per-app notification silencing is being evaluated separately.
 
 ## Verified display fix: Square Scale (17 November 2026)
 
-[**Square Scale**](Square-Scale/README.md) is a Vector module (System Framework scope) that makes the built in square app mode bigger. The menu's square preset writes a fixed 0.72 scale to `watch_small_screen_scale_h/_v`; the module rewrites that value to 0.85 as it is saved (adjustable with `persist.sys.square_scale`, 0.5 to 1.0). This fixes unresizeable, portrait locked apps such as Unity games that ignore `wm size`. User confirmed working after a reboot.
+[**Square Scale**](Make-Square-Apps-Larger/README.md) is a Vector module (System Framework scope) that makes the built in square app mode bigger. The menu's square preset writes a fixed 0.72 scale to `watch_small_screen_scale_h/_v`; the module rewrites that value to 0.85 as it is saved (adjustable with `persist.sys.square_scale`, 0.5 to 1.0). This fixes unresizeable, portrait locked apps such as Unity games that ignore `wm size`. User confirmed working after a reboot.
 
 ## Verified fix: Glance Auto Beta v1.1 (17 November 2026)
 
-[**Glance Auto Beta v1.1 — source, build instructions and recovery**](Glance-Auto-Beta-v1.1/README.md) is a rooted Android 15 app for the APPLLP 7 Pro that displays a large glance clock on verified wrist-raise wakes, dismisses to the underlying app on tap, sleeps after 8.5 seconds without a tap, and automatically rearms. Power-button wakes bypass the clock. Optional boot startup was **user-confirmed after one initial power-button screen-off**; subsequent wrist-wake cycles kept working. The code does not replace Magisk, the separate original Stage 1 beta, or the existing cooldown module. Other firmware builds and long-term battery impact have not been established. The [GitHub Actions build workflow](.github/workflows/build-glance-auto.yml) can produce a debug APK; signing keys differ between builds, so do not assume that APK can upgrade an existing locally signed installation.
+[**Glance Auto Beta v1.1 — source, build instructions and recovery**](Wrist-Raise-Clock-Auto-v1.1/README.md) is a rooted Android 15 app for the APPLLP 7 Pro that displays a large glance clock on verified wrist-raise wakes, dismisses to the underlying app on tap, sleeps after 8.5 seconds without a tap, and automatically rearms. Power-button wakes bypass the clock. Optional boot startup was **user-confirmed after one initial power-button screen-off**; subsequent wrist-wake cycles kept working. The code does not replace Magisk, the separate original Stage 1 beta, or the existing cooldown module. Other firmware builds and long-term battery impact have not been established. The [GitHub Actions build workflow](.github/workflows/build-glance-auto.yml) can produce a debug APK; signing keys differ between builds, so do not assume that APK can upgrade an existing locally signed installation.

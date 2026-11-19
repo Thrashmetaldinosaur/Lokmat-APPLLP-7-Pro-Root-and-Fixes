@@ -1,4 +1,4 @@
-# Full First Page v1.6 — verified on LOKMAT APPLLP 7 Pro
+# App drawer: 10 icons without the clock — v1.6 (previous release)
 
 **User-confirmed 14 November 2026.** The native Style 5 app drawer shows **10 regular app icons (5 × 2) plus the four original favorites along the bottom**, with the oversized clock/date widget removed. The screenshot confirms the intended visual result; APK installation and reboot were successful. The user reported "perfect." Other firmware builds and devices remain untested.
 

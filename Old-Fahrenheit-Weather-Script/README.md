@@ -1,4 +1,6 @@
-# APPLLP 7 Pro — Celsius → Fahrenheit weather value workaround
+# Older Celsius-to-Fahrenheit weather script (historical workaround)
+
+> **Historical workaround — not the recommended current fix.** This polling script has potential double-conversion and update issues. For the verified native Fahrenheit setting plus watch-face display fix, see [Fahrenheit weather and watch faces](../Fahrenheit-on-Weather-and-Watchfaces/README.md).
 
 **Status: user confirmed Celsius-to-Fahrenheit display remains working after a normal full reboot on 13 November 2026.** The `service.d` workaround therefore survives at least one reboot on the tested watch. This observation does **not** yet establish correctness after repeated service restarts, multiple reboots, or all weather updates.
 

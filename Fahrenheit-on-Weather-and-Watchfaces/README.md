@@ -1,4 +1,4 @@
-# APPLLP 7 Pro — Watchface Fahrenheit v2 (verified)
+# Show Fahrenheit in the weather app and on watch faces — v2
 
 **Verified on the user's watch, 14 November 2026:** native OEM weather screens and weather-enabled watch face display Fahrenheit after one normal reboot. Vector logs confirm that the watch-face temperature hook ran (6°C to 42.8°F in memory). This was a user-reported visual PASS; future OTA compatibility and repeated weather refreshes are not yet independently verified.
 
@@ -15,7 +15,7 @@ The ZIP contains the Java hook, Android Gradle project, Vector/Xposed API stubs,
 - Rooted with Magisk, Vector LSPosed-compatible framework
 - **Native Fahrenheit enabled:** `settings get system step_user_metric` returns `0`
 - Vector module `com.appllp7.watchfacefahrenheit`, scoped **only** to `com.android.launcher3`
-- Works alongside [Full First Page v1.6](../Full-First-Page-v1.6/README.md), which remains enabled.
+- Works alongside [Full First Page v1.6](../App-Drawer-10-Icons-v1.6-Previous/README.md), which remains enabled.
 
 ## Mechanism
 

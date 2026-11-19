@@ -1,4 +1,4 @@
-# APPLLP 7 Pro — Compact Notifications (Vector/LSPosed)
+# Make notification cards smaller — text, icons, and spacing
  
 **v2 verified; v3 denser profile experimental.** Source only, for the exact tested APPLLP 7 Pro Android 15 OEM launcher firmware.
  
