@@ -6,7 +6,8 @@
 
 | What you want to change | Guide / download | Status |
 | --- | --- | --- |
-| **Raise your wrist to see a large clock**; tap to dismiss; automatically rearm, optionally after reboot | [Automatic wrist-raise clock v1.1](Wrist-Raise-Clock-Auto-v1.1/README.md) | Working after reboot (one initial power-button screen-off required); rooted Android app |
+| **Raise your wrist to see a large clock**; tap to dismiss; automatically rearm, optionally after reboot | [Automatic wrist-raise clock v1.2.2 (current)](Wrist-Raise-Clock-Auto-v1.2.2/README.md) · [APK](Wrist-Raise-Clock-Auto-v1.2.2/Glance-Auto-v1.2.2.apk) | Verified 20% prearmed brightness, video guard, repeated wrist raises and power-button wakes; rooted Android app |
+| **Hide the persistent Glance clock notifications** without removing its overlay permission | [Hide overlay warning and snooze ongoing notification](Hide-Glance-Notifications/README.md) | Rooted per-channel importance=None fix; optional one-year foreground-service snooze |
 | **Show 10 app icons per page, remove the giant clock/date, and retain four favorites** | [App drawer: 10 icons, no clock (current v1.7)](App-Drawer-10-Icons-No-Clock/README.md) | Verified Vector module; current v1.7 [source and release notes](App-Drawer-10-Icons-v1.7-Current/README.md) |
 | **Make notification cards more compact** | [Smaller notification cards](Smaller-Notification-Cards/README.md) | v2 verified; denser v3 experimental |
 | **Make apps bigger in square-screen mode** on the round display | [Larger square-screen apps](Make-Square-Apps-Larger/README.md) | Verified Vector module |
@@ -19,6 +20,7 @@
 
 | Older option | Why it is here |
 | --- | --- |
+| [Automatic wrist-raise clock v1.1](Wrist-Raise-Clock-Auto-v1.1/README.md) | Historical version; current verified clock is v1.2.2 |
 | [10-icon app drawer v1.6](App-Drawer-10-Icons-v1.6-Previous/README.md) | Previous working version; superseded by v1.7. **Do not install as a second module.** |
 | [Previous Fahrenheit weather polling script](Old-Fahrenheit-Weather-Script/README.md) | Historical workaround with double-conversion risks; use the current Fahrenheit fix above instead |
 | [YouTube/ReVanced automatic fullscreen v6.2](Auto-Fullscreen-YouTube-v6.2/README.md) | Previously verified Magisk approach; later disabled as redundant when ReVanced's own fullscreen setting worked |

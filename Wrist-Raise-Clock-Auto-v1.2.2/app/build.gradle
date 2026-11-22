@@ -1,0 +1,13 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.appllp7.glanceauto'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.appllp7.glanceauto'
+        minSdk 26
+        targetSdk 32
+        versionCode 5
+        versionName '1.2.2-clock-prewake-20pct-media-guard'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}
