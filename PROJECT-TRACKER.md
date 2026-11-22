@@ -1,7 +1,26 @@
 # APPLLP 7 Pro — fixes and development tracker
 
-**Updated 18 November 2026 (navigation and titles).** Reference device: `WP_C30_VP69_OLED`, Android 15, build `LOKMAT_APPLLP_7_PRO_C30_EN_V1.0_20260921`, Magisk 31.1, unlocked slot A. **Status labels distinguish user-confirmed results from tests and unverified proposals.**
+**Updated 22 November 2026 (current status and remaining priorities).** Reference device: `WP_C30_VP69_OLED`, Android 15, build `LOKMAT_APPLLP_7_PRO_C30_EN_V1.0_20260921`, Magisk 31.1, unlocked slot A. Historical entries below are retained as an audit trail; earlier "Next tasks" entries are **superseded** by this current-status section.
 
+## Current snapshot — 22 November 2026
+
+**Newly completed:** [Glance Auto v1.2.2](Wrist-Raise-Clock-Auto-v1.2.2/README.md) is the current working wrist-raise clock. User verified 20% brightness prearming without a bright initial flash, power-button bypass, automatic 8.5-second display and sleep, media-guard behavior, and repeated screen cycles. Its exact installed APK and sanitized source were published. The exploratory Vector direct wake-gesture bridge was not installed or published; preserve the stable root/logcat implementation.
+
+**Notification cleanup:** [Hide Glance notifications](Hide-Glance-Notifications/README.md) was verified user-working. Android System overlay-warning channel was retained with importance **None (0)** instead of disabled/deleted, because the channel otherwise reappeared. The separate Glance foreground-service card was snoozed for **365 days**; it can reappear on a service restart or when snooze expires. Neither fix changes the overlay permission or service. The notification task described below as "FIRST" is therefore complete **for Glance Auto**; suppress other notifications only on explicit evidence.
+
+**Already working/preserve:** current app drawer/favorites v1.7; compact notification cards **v2** (v3 still experimental); Right-swipe *App Menu* setting; Light Doze ON / Deep Doze OFF; Vector/LSPosed; native brightness/DPI 182; Fahrenheit watchface/weather; Hark weather accuracy; native ReVanced fullscreen; disabled stock fitness apps; Pure Face watch face; rooted Magisk. Wake Cooldown Beta v3.1 is part of the working setup—do not replace/retest without a concrete regression.
+
+### Remaining work, by priority
+
+1. **Right-swipe OEM widgets/options panel:** Investigate the *separate* panel to the left of home (not the Style 5 All Apps menu), its proprietary or Android widget host API, and whether third-party/custom widgets and configurable timer lengths can be supported. Read-only OEM code inspection first; preserve existing swipe gestures, v1.7 launcher, and watchface modules.
+2. **Compact notification v3:** v2 is verified, v3 source/built preview exists but on-device post-reboot visual and hook verification is incomplete. Only refine or install if smaller cards are still desired, preserving the launcher and notification actions.
+3. **Battery/drain characterization:** Existing Light Doze and kernel suspend verified, battery improvement unquantified. Use repeatable unplugged A/B measurements before new power policy changes; no evidence for a runaway modem or compulsory fix.
+4. **Magisk root authorization prompt reliability:** Some prompts are delayed/missing while explicit superuser grants function. Investigate non-disruptively; no Magisk replacement or root resets.
+5. **Optional boot-first-arm refinement for Glance v1.2.2:** One initial physical power-button screen-off may be needed following reboot; no need to fix unless user values fully hands-free first activation. Do not risk working prearmed brightness or ongoing clock.
+
+**Closed/deferred for safety:** powered-off charging and boot-chain modifications (defer to OEM); unreliable USB diagnostic work; OTA firmware guesses; further aspect-ratio shortcut unless the native control stops working; experimental direct-gesture Vector bridge (not justified by unmeasured battery savings).
+
+---
 ## Verified / keep working
 
 | Feature | Result and caveat |
