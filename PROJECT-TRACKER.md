@@ -10,6 +10,14 @@
 
 **Already working/preserve:** current app drawer/favorites v1.7; compact notification cards **v2** (v3 still experimental); Right-swipe *App Menu* setting; Light Doze ON / Deep Doze OFF; Vector/LSPosed; native brightness/DPI 182; Fahrenheit watchface/weather; Hark weather accuracy; native ReVanced fullscreen; disabled stock fitness apps; Pure Face watch face; rooted Magisk. Wake Cooldown Beta v3.1 is part of the working setup—do not replace/retest without a concrete regression.
 
+### QuickCenter widget-panel investigation — read-only, 22 November 2026
+
+- **Architecture verified from OEM APK:** the left-of-home panel is launcher `QuickCenter`, built over Android `AppWidgetHost` but populated from a fixed `QuickCenterCard` enum. Its editor toggles a predefined card list, **not** an unrestricted installed third-party widget picker.
+- **Nine predefined categories:** Assistant, Quick Apps, Weather, Battery, Countdown Timer, Recorder, Fitness, Music and Alipay. The OEM edit UI can show/hide supported cards; some packages may be disabled or unavailable. Preserve existing debloat, v1.7 All Apps module and launcher configuration.
+- **Timer finding:** the OEM timer widget has 5/10/15-minute quick actions, but tapping its main area while idle opens the full OEM Timer app. The full app already supports a **Customize** action opening a built-in hour/minute/second wheel selector, plus eight presets. No new timer implementation is necessary for arbitrary durations. On-watch visual confirmation is still pending.
+- **Third-party widget expansion:** exposing arbitrary external widgets inside QuickCenter would require further launcher-specific integration; merely installing an Android widget doesn't add a QuickCenter card. No launcher hooks, database edits, APK replacements, installations, restarts or active settings changes were made during this investigation. Keep this as an optional research track, not a tested fix.
+- **Next physical action:** user checks QuickCenter Edit → Timer and taps the idle timer widget → Customize. Do not interrupt an active app session for a diagnostic. Private APK/SQLite/DEX dumps and workstation identifiers remain local, not on GitHub.
+
 ### Remaining work, by priority
 
 1. **Right-swipe OEM widgets/options panel:** Investigate the *separate* panel to the left of home (not the Style 5 All Apps menu), its proprietary or Android widget host API, and whether third-party/custom widgets and configurable timer lengths can be supported. Read-only OEM code inspection first; preserve existing swipe gestures, v1.7 launcher, and watchface modules.
